@@ -24,17 +24,20 @@ public class ApplyTest extends TestBase {
         applyPage.nearMeButton();
         applyPage.sleep();
         applyPage.scrollDownToCity();
-        // applyPage.cityCheckbox();
-//        applyPage.cityClick();
-//        Assert.assertTrue(applyPage.jobsCount().contains(applyPage.numberOfJobs()));
+        applyPage.cityOverlapping();
+        applyPage.sleep();
+        Assert.assertTrue(applyPage.numberOfJobs().contains(applyPage.jobsCount()));
     }
 
     @Test
-    public void jobTitle(){
+    public void jobTitle() throws InterruptedException {
         ApplyPage applyPage = new ApplyPage();
         applyPage.clickApplyButton();
         applyPage.alert();
         applyPage.nearMeButton();
+        applyPage.sleep();
+        applyPage.scrollDownToCity();
+        applyPage.cityOverlapping();
 
         Assert.assertTrue(applyPage.pageTitle().contains(applyPage.title()));
     }
