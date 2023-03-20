@@ -5,11 +5,11 @@
             <packages>
              <package name="tests"/>
                <classes>
-<!--                <class name = "ApplyTest">-->
-<!--                <class name = "Test_eachTtile">-->
-<!--                <class name = "Title_testCase1">-->
-<!--                <class name = "Sprint">-->
-<!--                <class name = "ChatWithUsTests">-->
+                <class name = "ApplyTest">
+                <class name = "Test_eachTtile">
+                <class name = "Title_testCase1">
+                <class name = "Sprint">
+                <class name = "ChatWithUsTests">
         </class>
                </classes>
              </packages>
