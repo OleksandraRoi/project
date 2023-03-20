@@ -9,7 +9,9 @@ public class Driver {
 
 
     private static WebDriver driver;
-    private Driver(){}
+
+    private Driver() {
+    }
 
     public static WebDriver getDriver() {
 
@@ -33,10 +35,11 @@ public class Driver {
         return driver;
     }
 
-    public static void quitDriver(){
-        if(driver != null){
+    public static void quitDriver() {
+        if (driver != null) {
             driver.quit();
             driver = null;
         }
     }
 }
+
