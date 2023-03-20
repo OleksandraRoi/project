@@ -1,24 +1,13 @@
 package tests;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.Driver;
-
-import javax.print.attribute.HashPrintServiceAttributeSet;
-
-import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
-
 import static org.testng.Assert.assertTrue;
-import static org.testng.AssertJUnit.assertEquals;
+
 
 
 public class FindSocialIcons extends TestBase {
@@ -27,13 +16,12 @@ public class FindSocialIcons extends TestBase {
         @Test
     public void testPinterestIcon() throws InterruptedException {
 
-
             WebElement pinterestIcon = Driver.getDriver().findElement(By.cssSelector("a[title='Pinterest']"));
            // check if the Pinterest icon is displayed
              assertTrue(pinterestIcon.isDisplayed());
             pinterestIcon.click();
 
-            // Swich pages
+            // Switch pages
             Set<String> handles =  Driver.getDriver().getWindowHandles();//parentid,childid
             Iterator it = handles.iterator();
             String parentid = (String) it.next();
@@ -59,7 +47,7 @@ public class FindSocialIcons extends TestBase {
 
         instagramIcon.click();
 
-     // Swich pages
+     // Switch pages
         Set<String> handles =  Driver.getDriver().getWindowHandles();//parentid,childid
         Iterator it = handles.iterator();
         String parentid = (String) it.next();
@@ -86,7 +74,7 @@ public class FindSocialIcons extends TestBase {
 
         facebookIcon.click();
 
-        // Swich pages
+        // Switch pages
         Set<String> handles =  Driver.getDriver().getWindowHandles();//parentid,childid,subchild
         Iterator it = handles.iterator();
         String parentid = (String) it.next();
@@ -97,7 +85,6 @@ public class FindSocialIcons extends TestBase {
         String expectedUrl = "https://www.pinterest.com/flooranddecor/";
         Assert.assertEquals(currentUrl, "https://www.facebook.com/flooranddecor");
 
-
     }
 
     @Test
@@ -107,7 +94,7 @@ public class FindSocialIcons extends TestBase {
         // check if the YouTube icon is displayed
         assertTrue(youtubeIcon.isDisplayed());
         youtubeIcon.click();
-        // Swich pages
+        // Switch pages
         Set<String> handles =  Driver.getDriver().getWindowHandles();//parentid,childid,subchild
         Iterator it = handles.iterator();
         String parentid = (String) it.next();
@@ -129,7 +116,7 @@ public class FindSocialIcons extends TestBase {
         // check if the Linked In icon is displayed
         assertTrue(socialLinkedinIcon.isDisplayed());
         socialLinkedinIcon.click();
-        // Swich pages
+        // Switch pages
         Set<String> handles =  Driver.getDriver().getWindowHandles();//parentid,childid,subchild
         Iterator it = handles.iterator();
         String parentid = (String) it.next();
@@ -150,6 +137,7 @@ public class FindSocialIcons extends TestBase {
         // check if the Twitter icon is displayed
         assertTrue(twitterIcon.isDisplayed());
        twitterIcon.click();
+        // Switch pages
         Set<String> handles =  Driver.getDriver().getWindowHandles();//parentid,childid,subchild
         Iterator it = handles.iterator();
         String parentid = (String) it.next();
@@ -159,7 +147,6 @@ public class FindSocialIcons extends TestBase {
         String currentUrl = Driver.getDriver().getCurrentUrl();
         String expectedUrl = "https://www.pinterest.com/flooranddecor/";
         Assert.assertEquals(currentUrl, "https://twitter.com/flooranddecor");
-
 
     }
 
@@ -171,7 +158,7 @@ public class FindSocialIcons extends TestBase {
         // check if the Linked In icon is displayed
         assertTrue(socialHouzzLinkIcon.isDisplayed());
         socialHouzzLinkIcon.click();
-        // Swich pages
+        // Switch pages
         Set<String> handles =  Driver.getDriver().getWindowHandles();//parentid,childid,subchild
         Iterator it = handles.iterator();
         String parentid = (String) it.next();
