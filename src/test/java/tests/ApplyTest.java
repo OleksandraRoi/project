@@ -23,7 +23,7 @@ public class ApplyTest extends TestBase {
         applyPage.alert();
         applyPage.nearMeButton();
         applyPage.sleep();
-        applyPage.scrollDownToCity();
+        applyPage.scrollDown();
         applyPage.cityOverlapping();
         applyPage.sleep();
         Assert.assertTrue(applyPage.numberOfJobs().contains(applyPage.jobsCount()));
@@ -34,14 +34,18 @@ public class ApplyTest extends TestBase {
         ApplyPage applyPage = new ApplyPage();
         applyPage.clickApplyButton();
         applyPage.alert();
+        applyPage.sleep();
         applyPage.nearMeButton();
         applyPage.sleep();
-        applyPage.scrollDownToCity();
+        applyPage.scrollDown();
         applyPage.cityOverlapping();
-
-        Assert.assertTrue(applyPage.pageTitle().contains(applyPage.title()));
+        applyPage.scrollUp();
+        applyPage.sleep2();
+        String nameJob = applyPage.jobLink1();
+        applyPage.jobsLinksClick();
+        applyPage.sleep();
+        Assert.assertEquals(nameJob, applyPage.jobLink2());
     }
-
     @Test
     public void benefits() {
         ApplyPage applyPage = new ApplyPage();
