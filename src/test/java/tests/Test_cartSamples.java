@@ -41,19 +41,11 @@ public class Test_cartSamples {
         driver.findElement(By.xpath("/html/body/div[4]/div/div/div/div[2]/article/div[5]/a[1]")).click();
         Thread.sleep(5000);
 
+        // Calculate Zip Code Shipping
+        driver.findElement(By.xpath("/html/body/div[1]/div[9]/div[1]/main/div[1]/div/div[3]/div/div[1]/div[1]/form/button")).click();
 
-
-
-
-
-
-
-
-
-
-
-
-
+        // Remove items
+        driver.findElement(By.xpath("/html/body/div[1]/div[9]/div[1]/main/div[1]/div/div[2]/div/section/article/div/div[10]/div/form/button")).click();
 
 
 
