@@ -150,4 +150,11 @@ public class SeleniumUtils {
         int y = element.getLocation().getY();
         ((JavascriptExecutor)Driver.getDriver()).executeScript("window.scrollBy(0,"+ y +")");
     }
+    public static void switchToIframe(WebElement element) {
+        Driver.getDriver().switchTo().frame(element);
+    }
+    public static void click(WebElement element, int seconds) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(seconds));
+        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+    }
 }
