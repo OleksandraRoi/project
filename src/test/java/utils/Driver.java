@@ -20,6 +20,7 @@ public class Driver {
         if (driver == null) {
             switch (browser) {
                 case "chrome":
+                    driver = new ChromeDriver();
                     break;
                 case "edge":
                     driver = new EdgeDriver();
