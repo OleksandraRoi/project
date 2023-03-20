@@ -17,9 +17,9 @@ public class TestBase {
         Driver.getDriver().get(ConfigReader.getProperty("homepage"));
     }
 
-//    @AfterMethod (alwaysRun = true)
-//    public void tearDownMethod(){
-//
-//        Driver.quitDriver();
-//    }
+    @AfterMethod (alwaysRun = true)
+    public void tearDownMethod(){
+
+        Driver.quitDriver();
+    }
 }
