@@ -1,17 +1,14 @@
-<?xml version ="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd"
-        <suit name = "Reg tests">
-          <test name ="UI Tests">
-            <packages>
-             <package name="tests"/>
-               <classes>
-<!--                <class name = "ApplyTest">-->
-<!--                <class name = "Test_eachTtile">-->
-<!--                <class name = "Title_testCase1">-->
-<!--                <class name = "Sprint">-->
-<!--                <class name = "ChatWithUsTests">-->
-        </class>
-               </classes>
-             </packages>
-          </test>
-        </suit>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="FLOOR DECOR">
+    <test name="UI Tests">
+        <classes>
+            <class name="tests.ApplyTest"/>
+            <class name="tests.ChatWithUsTests"/>
+            <class name="tests.Test_cartSamples"/>
+            <class name="tests.Test_eachTitle"/>
+            <class name="tests.Test_shoppingCart"/>
+            <class name="tests.Title_testCase1"/>
+        </classes>
+    </test>
+</suite>
