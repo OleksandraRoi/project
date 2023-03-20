@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 
-public class Sprint {
+public class Test_shoppingCart {
     public static void main(String[] args) throws InterruptedException {
 
         ChromeOptions options = new ChromeOptions();
@@ -30,10 +30,11 @@ public class Sprint {
 
         // Add sample
         driver.findElement(By.xpath("//button[contains(text(), 'Add Sample')]")).click();
+        Thread.sleep(2000);
 
         // Cart
-        driver.findElement(By.xpath("/html/body/div[1]/header/div[2]/div[11]/div")).click();
-        Thread.sleep(5000);
+        driver.findElement(By.xpath("/html/body/div[4]/div/div/div/div[2]/article/div[5]/a[1]")).click();
+
 
 
         //Zip Code
@@ -68,7 +69,7 @@ public class Sprint {
         //State
         js.executeScript("window.scrollBy(0,200)", "");
         driver.findElement(By.className("ss-single-selected")).click();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         driver.findElement(By.xpath("//*[@id=\"dwfrm_addressOptions\"]/article[1]/div/div/div/div[6]/div/div[1]/div/div[2]/div[2]/div[2]")).click();
 
         //Zip Code
@@ -79,7 +80,7 @@ public class Sprint {
 
         //Continue
         driver.findElement(By.id("dwfrm_addressOptions_next")).click();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
 
         //use this address
         driver.findElement(By.xpath("/html/body/div[6]/div/div/div[4]/button")).click();

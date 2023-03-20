@@ -14,6 +14,7 @@ import utils.Driver;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 public class ApplyPage{
@@ -21,29 +22,29 @@ public class ApplyPage{
     public ApplyPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
-// c6d42b93d2938f4dc6d98255692abcc1
 
     @FindBy(xpath="//a[@href='https://careers.flooranddecor.com/home']")
     private WebElement applyButton;
     @FindBy(id="consent_reject")
     private WebElement alertReject;
-    @FindBy(id="close_exit_call_to_action")
-    private WebElement secondPopUpClose;
     @FindBy(id="near_me_button_1_0")
     private WebElement jobsNearMeButton;
-    @FindBy(id="label_city_1_0_4")
-    private WebElement cityID;
     @FindBy(xpath = "//p[b]")
     private WebElement jobsNumberText;
-    @FindBy(xpath = "//h3[@class='job-title']")
-    private WebElement jobTitle;
+    @FindBy(id = "link_job_title_1_0_7")
+    private WebElement jobLinkText1;
+    @FindBy(id = "job_title_0_0")
+    private WebElement jobLinkText2;
     @FindBy(xpath = "//li[@class='nav-item'][2]")
     private WebElement linkBenefits;
     @FindBy(id="page_block_0_0")
     private WebElement benefitsText;
 
     public void sleep() throws InterruptedException {
-        Thread.sleep(1000);
+        Thread.sleep(2000);
+    }
+    public void sleep2() throws InterruptedException {
+        Thread.sleep(8000);
     }
     public void clickApplyButton (){
         applyButton.click();
@@ -53,32 +54,19 @@ public class ApplyPage{
     }
     public void alert(){ alertReject.click(); }
     public void nearMeButton(){ jobsNearMeButton.click(); }
-
-    public void scrollDownToCity(){
+    public void scrollDown(){
         ((JavascriptExecutor) Driver.getDriver()).executeScript("window.scrollBy(0, 1450)");
     }
-    public void cityClick() throws InterruptedException {
-        List<WebElement> citys = Driver.getDriver().findElements(By.name("cities[]"));
-        for (WebElement city : citys) {
-            if (city.getText().equals("Arlington")) ;
-            sleep();
-            city.click();
-        }
+    public void scrollUp(){
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("window.scrollBy(0, -500)");
     }
-
     public void cityOverlapping(){
-        // Locate the element
         WebElement element = Driver.getDriver().findElement(By.id("label_city_1_0_4"));
-
-// Get the location and size of the element
         Point location = element.getLocation();
         Dimension size = element.getSize();
 
-// Check if there are any overlapping elements
         List<WebElement> overlappingElements = Driver.getDriver().findElements(By.cssSelector("*:hover"));
-
         if (!overlappingElements.isEmpty()) {
-            // There are overlapping elements
             WebElement parentElement = overlappingElements.get(overlappingElements.size() - 1);
             Actions actions = new Actions(Driver.getDriver());
             actions.moveToElement(parentElement).build().perform();
@@ -97,15 +85,21 @@ public class ApplyPage{
         System.out.println(text);
         return text; }
 
-    public String title(){
-        return jobTitle.getText();
+    public void jobsLinksClick(){
+        WebElement element = Driver.getDriver().findElement(By.id("link_job_title_1_0_7"));
+        Point location = element.getLocation();
+        Dimension size = element.getSize();
+
+        List<WebElement> overlappingElements = Driver.getDriver().findElements(By.cssSelector("*:hover"));
+        if (!overlappingElements.isEmpty()) {
+            WebElement parentElement = overlappingElements.get(overlappingElements.size() - 1);
+            Actions actions = new Actions(Driver.getDriver());
+            actions.moveToElement(parentElement).build().perform();
+        }
+       element.click();
     }
-    public String pageTitle(){
-        return Driver.getDriver().getCurrentUrl();
-    }
+    public String jobLink1(){ return jobLinkText1.getText(); }
+    public String jobLink2(){ return jobLinkText2.getText();}
     public void benefits(){ linkBenefits.click(); }
     public String benefitsContain(){ return benefitsText.getText(); }
-
-
-
 }
