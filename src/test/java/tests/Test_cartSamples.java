@@ -48,7 +48,5 @@ public class Test_cartSamples {
         driver.findElement(By.xpath("/html/body/div[1]/div[9]/div[1]/main/div[1]/div/div[2]/div/section/article/div/div[10]/div/form/button")).click();
 
 
-
-
     }
 }
