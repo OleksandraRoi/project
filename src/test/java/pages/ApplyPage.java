@@ -27,8 +27,6 @@ public class ApplyPage{
     private WebElement applyButton;
     @FindBy(id="consent_reject")
     private WebElement alertReject;
-    @FindBy(id="close_exit_call_to_action")
-    private WebElement secondPopUpClose;
     @FindBy(id="near_me_button_1_0")
     private WebElement jobsNearMeButton;
     @FindBy(xpath = "//p[b]")
@@ -56,7 +54,6 @@ public class ApplyPage{
     }
     public void alert(){ alertReject.click(); }
     public void nearMeButton(){ jobsNearMeButton.click(); }
-
     public void scrollDown(){
         ((JavascriptExecutor) Driver.getDriver()).executeScript("window.scrollBy(0, 1450)");
     }
@@ -100,13 +97,9 @@ public class ApplyPage{
             actions.moveToElement(parentElement).build().perform();
         }
        element.click();
-
     }
     public String jobLink1(){ return jobLinkText1.getText(); }
     public String jobLink2(){ return jobLinkText2.getText();}
     public void benefits(){ linkBenefits.click(); }
     public String benefitsContain(){ return benefitsText.getText(); }
-
-
-
 }

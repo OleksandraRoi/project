@@ -46,6 +46,7 @@ public class ApplyTest extends TestBase {
         applyPage.sleep();
         Assert.assertEquals(nameJob, applyPage.jobLink2());
     }
+
     @Test
     public void benefits() {
         ApplyPage applyPage = new ApplyPage();
