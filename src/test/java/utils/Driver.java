@@ -11,7 +11,7 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
 
-    private static ThreadLocal<WebDriver> drivers =  new ThreadLocal<>();
+    private static ThreadLocal<WebDriver> drivers = new ThreadLocal<>();
 
     private static WebDriver driver;
 
@@ -22,11 +22,11 @@ public class Driver {
 
         String browser = System.getProperty("browser");
 
-        if (browser == null){
+        if (browser == null) {
             browser = ConfigReader.getProperty("browser");
         }
 
-        if(drivers.get() == null) {
+        if (drivers.get() == null) {
             switch (browser) {
                 case "chrome":
                     ChromeOptions options = new ChromeOptions();
@@ -62,8 +62,8 @@ public class Driver {
                     throw new RuntimeException("Unsupported browser");
             }
         }
-        return  drivers.get();
+        return drivers.get();
     }
-
+}
 
 
