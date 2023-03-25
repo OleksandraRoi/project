@@ -4,11 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
 
+    private static ThreadLocal<WebDriver> drivers =  new ThreadLocal<>();
 
     private static WebDriver driver;
 
@@ -17,31 +20,50 @@ public class Driver {
 
     public static WebDriver getDriver() {
 
-        String browser = ConfigReader.getProperty("browser");
+        String browser = System.getProperty("browser");
 
-        if (driver == null) {
+        if (browser == null){
+            browser = ConfigReader.getProperty("browser");
+        }
+
+        if(drivers.get() == null) {
             switch (browser) {
                 case "chrome":
-                    driver = new ChromeDriver();
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--remote-allow-origins=*");
+                    drivers.set(new ChromeDriver(options));
+                    break;
+                case "headlessChrome":
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.addArguments("--remote-allow-origins=*");
+                    chromeOptions.addArguments("--headless");
+                    drivers.set(new ChromeDriver(chromeOptions));
                     break;
                 case "edge":
-                    driver = new EdgeDriver();
+                    drivers.set(new EdgeDriver());
+                    break;
+                case "headlessEdge":
+                    EdgeOptions edgeOptions = new EdgeOptions();
+                    edgeOptions.addArguments("--headless");
+                    drivers.set(new EdgeDriver(edgeOptions));
                     break;
                 case "firefox":
-                    driver = new FirefoxDriver();
+                    drivers.set(new FirefoxDriver());
+                    break;
+                case "headlessFirefox":
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.addArguments("--headless");
+                    drivers.set(new FirefoxDriver(firefoxOptions));
+                    break;
+                case "safari":
+                    drivers.set(new SafariDriver());
                     break;
                 default:
-                    throw new RuntimeException("Unsupported Browser");
+                    throw new RuntimeException("Unsupported browser");
             }
         }
-        return driver;
+        return  drivers.get();
     }
 
-    public static void quitDriver() {
-        if (driver != null) {
-            driver.quit();
-            driver = null;
-        }
-    }
-}
+
 
