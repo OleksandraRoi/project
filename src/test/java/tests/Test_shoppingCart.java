@@ -4,24 +4,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
+import utils.Driver;
 
 
-public class Test_shoppingCart {
+public class Test_shoppingCart extends TestBase {
     public static void main(String[] args) throws InterruptedException {
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-
-        ChromeDriver driver = new ChromeDriver(options);
-
-        driver.manage().window().maximize();
 
         // Main page
         driver.get("https://www.flooranddecor.com/");
         Thread.sleep(5000);
 
         //Select tile
-        driver.findElement(By.xpath("//*[@id=\"main-nav-tile\"]")).click();
+        Driver.getDriver()(By.xpath("//*[@id=\"main-nav-tile\"]")).click();
 
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,300)", "");
