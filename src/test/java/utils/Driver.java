@@ -14,7 +14,9 @@ public class Driver {
     private static ThreadLocal<WebDriver> drivers =  new ThreadLocal<>();
 
     private static WebDriver driver;
-    private Driver(){}
+
+    private Driver() {
+    }
 
     public static WebDriver getDriver() {
 
@@ -63,11 +65,5 @@ public class Driver {
         return  drivers.get();
     }
 
-    public static void quitDriver(){
-        if(drivers.get() != null){
-            drivers.get().quit();
-            drivers.remove();
-        }
-      }
-    }
+
 
