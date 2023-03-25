@@ -63,11 +63,11 @@ public class Driver {
         return  drivers.get();
     }
 
-    public static void quitDriver(){
-        if(drivers.get() != null){
-            drivers.get().quit();
-            drivers.remove();
-        }
-      }
+//    public static void quitDriver(){
+//        if(drivers.get() != null){
+//            drivers.get().quit();
+//            drivers.remove();
+//        }
+//      }
     }
 
