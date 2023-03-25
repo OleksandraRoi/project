@@ -49,23 +49,23 @@ public class TestBase {
         logger = extentReport.createTest(method.getName());
     }
 
-    @AfterMethod (alwaysRun = true)
-    public void tearDownMethod(ITestResult testResult){ //ITestResult is a listener interface that stores the information about the test result
-
-        if(testResult.getStatus() == ITestResult.SUCCESS){
-            logger.pass("TEST PASSED.");
-        } else if (testResult.getStatus() == ITestResult.FAILURE) {
-            logger.fail("TEST FAILED.");
-            logger.fail(testResult.getThrowable());
-            String path = SeleniumUtils.getScreenshot("failed");
-            logger.addScreenCaptureFromPath(path);
-        }else{
-            logger.skip("TEST SKIPPED.");
-        }
-
-
-        Driver.quitDriver();
-    }
+//    @AfterMethod (alwaysRun = true)
+//    public void tearDownMethod(ITestResult testResult){ //ITestResult is a listener interface that stores the information about the test result
+//
+//        if(testResult.getStatus() == ITestResult.SUCCESS){
+//            logger.pass("TEST PASSED.");
+//        } else if (testResult.getStatus() == ITestResult.FAILURE) {
+//            logger.fail("TEST FAILED.");
+//            logger.fail(testResult.getThrowable());
+//            String path = SeleniumUtils.getScreenshot("failed");
+//            logger.addScreenCaptureFromPath(path);
+//        }else{
+//            logger.skip("TEST SKIPPED.");
+//        }
+//
+//
+//        Driver.quitDriver();
+//    }
 
     @AfterSuite(alwaysRun = true)
     public void tearDownMethod(){
