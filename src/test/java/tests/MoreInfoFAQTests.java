@@ -24,7 +24,7 @@ public class MoreInfoFAQTests extends TestBase{
         SeleniumUtils.scroll(200, 200);
         moreInfoPage.orderStatusCheckClick();
         moreInfoPage.clickHereLink();
-        SeleniumUtils.scroll(200, 200);
+        SeleniumUtils.scroll(250, 250);
         moreInfoPage.phoneNumber();
         moreInfoPage.orderNumber();
         moreInfoPage.checkStatusButtonClick();
