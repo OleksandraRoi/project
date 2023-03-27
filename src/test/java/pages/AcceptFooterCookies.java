@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,12 +14,13 @@ public class AcceptFooterCookies {
 
     @FindBy(xpath = "//button[@class='tingle-modal__close']")
     private WebElement popUpWindow;
+    public WebElement getPopUpWindow() {return popUpWindow;}
 
     public void clickOnCookies() {
+        SeleniumUtils.waitForClickablility(cookies,10);
         cookies.click();
     }
-    public void popUpWindowClose(){
-        SeleniumUtils.waitForClickablility(popUpWindow,15);
-        popUpWindow.click();
-    }
+    public void popUpWindowClick(){
+        SeleniumUtils.waitForClickablility(getPopUpWindow(),15);
+        popUpWindow.click();}
 }

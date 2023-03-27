@@ -25,6 +25,8 @@ public class FooterPage {
     @FindBy(xpath = "(//a[@class=\"b-footer_accordeon-link\"])[5]")
     protected WebElement FifthLink;
     public void clickOnLinks(WebElement nameOfLink){
+        SeleniumUtils.scrollToElement(nameOfLink);
+        SeleniumUtils.waitForClickablility(nameOfLink,5);
         try {
             Thread.sleep(1000);
         }catch (Exception e){
