@@ -15,7 +15,7 @@ import java.util.List;
 public class TileSidebarTest extends TestBase {
     TileSidebar_Page tileSidebar_page = new TileSidebar_Page();
 
-    @Test
+    @Test(groups = {"regression"})
     public void tile() throws InterruptedException {
 
         tileSidebar_page.clickTileButton();
@@ -24,7 +24,7 @@ public class TileSidebarTest extends TestBase {
 
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void color() throws InterruptedException {
         tileSidebar_page.clickTileButton();
         // tileSidebar_page.acceptAllCookiesButton.click();
@@ -34,7 +34,7 @@ public class TileSidebarTest extends TestBase {
         Thread.sleep(2000);
     }
 
-    @Test
+    @Test(groups = {"regression"})
     void approximateSize() throws InterruptedException {
         tileSidebar_page.clickTileButton();
         //  tileSidebar_page.acceptAllCookiesButton.click();
@@ -43,7 +43,7 @@ public class TileSidebarTest extends TestBase {
         Assert.assertTrue(Driver.getDriver().getPageSource().contains("Approximate Size"));
 
     }
-    @Test
+    @Test(groups = {"regression"})
     public void sortByTrending(){
         tileSidebar_page.clickTileButton();
         tileSidebar_page.clickColorTab();
@@ -54,7 +54,7 @@ public class TileSidebarTest extends TestBase {
         Assert.assertTrue(Driver.getDriver().getPageSource().contains("Trending"));
 
     }
-@Test
+@Test(groups = {"regression"})
     public void addSample() throws InterruptedException {
     tileSidebar_page.clickTileButton();
     tileSidebar_page.clickColorTab();

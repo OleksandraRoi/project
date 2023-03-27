@@ -10,7 +10,7 @@ public class WoodSection_Test extends TestBase {
 //    - Navigate to the Floor and Decor website
 //    - Click on the "Wood" category
 //    - Assert that the user can view the different types of wood available
-    @Test
+    @Test(groups = {"regression"})
     public void viewWoodCategory() throws InterruptedException {
         new WoodSection_Page().clickWoodSection();
 
@@ -23,7 +23,7 @@ public class WoodSection_Test extends TestBase {
 //   -  Add the product to the cart
 //   -  Assert that the product has been added to the cart
 
-    @Test
+    @Test(groups = {"regression"})
     public void addWoodToCart() throws InterruptedException {
         new WoodSection_Page().clickWoodSection();
         new WoodSection_Page().clickWoodColor();
@@ -35,7 +35,7 @@ public class WoodSection_Test extends TestBase {
 //    - Navigate to the Floor and Decor website
 //    - Enter a specific type of wood in the search bar
 //    - Assert that the search results show the specific type of wood entered
-    @Test
+    @Test(groups = {"regression"})
     public void searchForWood() throws InterruptedException {
         new WoodSection_Page().clickSearchBox();
 
@@ -47,7 +47,7 @@ public class WoodSection_Test extends TestBase {
 //    - Filter the products by price (low to high)
 //    - Assert that the products displayed meet the filter criteria
 
-    @Test
+    @Test(groups = {"regression"})
     public void filterWoodByLowPrice() throws InterruptedException {
         new WoodSection_Page().clickWoodSection();
         new WoodSection_Page().clickWoodColor();
@@ -61,7 +61,7 @@ public class WoodSection_Test extends TestBase {
 //    - Filter the products by price (high to low)
 //    - Assert that the products displayed meet the filter criteria
 
-    @Test
+    @Test(groups = {"regression"})
     public void filterWoodByHighPrice() throws InterruptedException {
         new WoodSection_Page().clickWoodSection();
         new WoodSection_Page().clickWoodColor();

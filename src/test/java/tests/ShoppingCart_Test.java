@@ -8,7 +8,7 @@ import pages.ShoppingCart_Page;
 
 public class ShoppingCart_Test extends TestBase {
 
-    @Test
+    @Test(groups = {"smoke"})
     public void addSampleToCart() throws InterruptedException {
         new ShoppingCart_Page().clickTileButton();
         new ShoppingCart_Page().clickTileItem();
