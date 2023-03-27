@@ -2,8 +2,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="FLOOR DECOR">
     <test name="UI Tests">
-        <classes>
-            <class name="tests.FindSocialIcons"/>
-        </classes>
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="tests"/>
+        </packages>
     </test>
 </suite>
