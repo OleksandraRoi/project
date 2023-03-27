@@ -48,7 +48,9 @@ public class TileSidebar_Page {
   @FindBy(xpath = "/html/body/div[1]/div[9]/div[1]/div[1]/main/div/section[3]/div/main/div[4]/article/div/div/div[7]/form/button")
        private WebElement submitSampleButton;
 
-  @FindBy(xpath = "a[title='View Cart']")
+
+  @FindBy(xpath = "/html/body/div[4]/div/div/div/div[2]/article/div[5]/a[1]")
+  //@FindBy(xpath = "a[title='View Cart']")
   private WebElement vewCart;
 
 
