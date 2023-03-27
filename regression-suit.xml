@@ -2,13 +2,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="FLOOR DECOR">
     <test name="UI Tests">
-        <classes>
-            <class name="tests.ApplyTest"/>
-            <class name="tests.ChatWithUsTests"/>
-            <class name="tests.Test_cartSamples"/>
-            <class name="tests.Test_eachTitle"/>
-            <class name="tests.ShoppingCart_Test"/>
-            <class name="tests.Title_testCase1"/>
-        </classes>
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="tests"/>
+        </packages>
     </test>
 </suite>

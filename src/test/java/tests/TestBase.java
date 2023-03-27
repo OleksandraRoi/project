@@ -62,8 +62,6 @@ public class TestBase {
         }else{
             logger.skip("TEST SKIPPED.");
         }
-
-
         Driver.quitDriver();
     }
 
