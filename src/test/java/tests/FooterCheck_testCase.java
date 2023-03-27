@@ -23,18 +23,21 @@ public class FooterCheck_testCase extends TestBase{
     }
     @Test(groups = {"regression"})
     public void test2(){
+        new AcceptFooterCookies().clickOnCookies();
         new FooterPage().clickOnLinks(new FooterPage().getSecondLink());
         SeleniumUtils.switchToWindow("Investor Relations :: Floor & Decor Holdings, Inc. (FND)");
         Assert.assertEquals(Driver.getDriver().getTitle(),"Investor Relations :: Floor & Decor Holdings, Inc. (FND)");
     }
     @Test(groups = {"regression"})
     public void test3(){
+        new AcceptFooterCookies().clickOnCookies();
         new FooterPage().clickOnLinks(new FooterPage().getThirdLink());
         SeleniumUtils.switchToWindow("ESG :: Floor & Decor Holdings, Inc. (FND)");
         Assert.assertEquals(Driver.getDriver().getTitle(),"ESG :: Floor & Decor Holdings, Inc. (FND)");
     }
     @Test(groups = {"regression"})
     public void test4(){
+        new AcceptFooterCookies().clickOnCookies();
         new FooterPage().clickOnLinks(new FooterPage().getFourthLink());
         SeleniumUtils.switchToWindow("Careers Home Page");
         Assert.assertEquals(Driver.getDriver().getTitle(),"Careers Home Page");
@@ -42,6 +45,7 @@ public class FooterCheck_testCase extends TestBase{
     }
     @Test(groups = {"regression"})
     public void test5(){
+        new AcceptFooterCookies().clickOnCookies();
         new FooterPage().clickOnLinks(new FooterPage().getFifthLink());
         SeleniumUtils.switchToWindow("Social Responsibility | Floor & Decor");
         Assert.assertEquals(Driver.getDriver().getTitle(),"Social Responsibility | Floor & Decor");
