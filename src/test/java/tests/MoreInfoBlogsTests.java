@@ -8,7 +8,7 @@ import utils.SeleniumUtils;
 
 public class MoreInfoBlogsTests extends TestBase{
 
-    @Test
+    @Test(groups = {"regression"})
     public void Blogs() {
         logger.info("Navigating to 'Floor & Decor' Home Page");
         MoreInfoBlogsPage moreInfoBlogs = new MoreInfoBlogsPage();
@@ -46,7 +46,7 @@ public class MoreInfoBlogsTests extends TestBase{
         //moreInfoBlogs.checkBoxBlackIsSelected();
     }
 
-    @Test
+    @Test(groups = {"regression"})
     public void Blogs2(){
         logger.info("Navigating to 'Floor & Decor' Home Page");
         MoreInfoBlogsPage moreInfoBlogs = new MoreInfoBlogsPage();
