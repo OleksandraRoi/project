@@ -64,6 +64,13 @@ public class Driver {
         }
         return drivers.get();
     }
+
+    public static void quitDriver(){
+        if(driver != null){
+            driver.quit();
+            driver = null;
+        }
+    }
 }
 
 
