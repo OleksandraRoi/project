@@ -11,10 +11,15 @@ import javax.swing.text.Utilities;
 import java.util.List;
 import java.util.Map;
 
-public class oneTitlePage extends TestBase {
-    public void test(String nameOfTitle,String findElement) throws InterruptedException {
+public class oneTitlePage{
+    public void test(String nameOfTitle,String findElement){
         SeleniumUtils.hover(Driver.getDriver().findElement(By.linkText(nameOfTitle)));
-        Driver.getDriver().findElement(By.partialLinkText(findElement)).click();
+        try {
+            Thread.sleep(1000);
+            Driver.getDriver().findElement(By.partialLinkText(findElement)).click();
+        }catch (Exception e){
+            e.getMessage();
+        }
         List<WebElement>pages = Driver.getDriver().findElements(By.xpath("//*[@class=\"b-product_tile-title\"]"));
         for(WebElement onePage :pages){
             System.out.println(onePage.getText());

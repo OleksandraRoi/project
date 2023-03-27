@@ -3,6 +3,7 @@ package tests;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import pages.HomePage;
+import utils.Driver;
 
 import static utils.SeleniumUtils.*;
 
@@ -12,7 +13,8 @@ public class ChatWithUsTests extends TestBase {
     @Test
     public void orderStatusResponse() {
         waitFor(5);
-        click(homePage.acceptAllCookiesButton, 15);
+//        click(Driver.getDriver().findElement(B));
+        click(homePage.acceptAllCookiesButton,  15);
         click(homePage.chatWithUsButton, 15);
         switchToIframe(homePage.chatFrame);
         click(homePage.chatOrderStatusButton, 15);
