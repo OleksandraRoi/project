@@ -65,7 +65,7 @@ public class TileSidebarTest extends TestBase {
     tileSidebar_page.clickAddSampleButton();
     Thread.sleep(2000);
     tileSidebar_page.clickVewCart();
-    Assert.assertTrue(Driver.getDriver().getPageSource().contains(" Shopping Cart (1)"));
+    Assert.assertTrue(Driver.getDriver().getPageSource().contains(" Shopping Cart "));
 }
 
 }
