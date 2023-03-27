@@ -17,27 +17,60 @@ public class TileSidebar_Page {
     public TileSidebar_Page() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-    @FindBy (id = "main-nav-tile")
+
+    @FindBy(id = "main-nav-tile")
     private WebElement tilebotton;
 
     @FindBy(id = "onetrust-accept-btn-handler")
     public WebElement acceptAllCookiesButton;
 
-    @FindBy(xpath = "/html/body/div[1]/div[9]/div[1]/div[1]/main/div/aside/div/div/div[2]/div[1]/div[1]")
+
+    @FindBy(xpath = "(//div[ contains(text(), 'Color' )])[1]")
+//    @FindBy(xpath = "/html/body/div[1]/div[9]/div[1]/div[1]/main/div/aside/div/div/div[2]/div[1]/div[1]")
     private WebElement coloTab;
 
+   @FindBy (xpath ="/html/body/div[1]/div[9]/div[1]/div[1]/main/div/aside/div/div/div[2]/div[2]/div[1]")
+        private WebElement approximateSize;
 
-    public void clickTileButton () {
+   @FindBy (xpath = "/html/body/div[1]/div[9]/div[1]/div[1]/main/div/aside/div/div/" +
+           "div[2]/div[1]/div[3]/div[3]/label")
+   private WebElement whiteColor;
+
+   @FindBy (xpath = "/html/body/div[1]/div[9]/div[1]/div[1]/main/div/" +
+           "section[2]/div[1]/div[3]/div/div[1]/span[1]")
+   private WebElement sortBy;
+
+   @FindBy(xpath = "/html/body/div[1]/div[9]/div[1]/div[1]/main/div/section[2]/ div[1]/div[3]/div/div[2]/div[2]/div/div[3]" )
+           private WebElement trending;
+
+
+
+    public void clickTileButton() {
         tilebotton.click();
     }
-        public String urlActual () {
+
+    public String urlActual() {
         return Driver.getDriver().getCurrentUrl();
+    }
+
+    public void clickColorTab() {
+        coloTab.click();
+    }
+    public void clickApproximateSize(){approximateSize.click(); }
+
+    public void clickWhiteColor() {
+        whiteColor.click();
+    }
+        public void clickSortBy() {
+            sortBy.click();
         }
-        public void clickColorTab () {
-            coloTab.click();
-        }
-
-
-
+            public void clickTrending(){
+                trending.click();
             }
+        }
+
+
+
+
+
 

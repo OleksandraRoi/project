@@ -23,12 +23,35 @@ public class TileSidebarTest extends TestBase {
         //Thread.sleep(2000);
 
     }
+
     @Test
     public void color() throws InterruptedException {
         tileSidebar_page.clickTileButton();
-        tileSidebar_page.acceptAllCookiesButton.click();
-       // Thread.sleep(2000);
+        // tileSidebar_page.acceptAllCookiesButton.click();
+        // Thread.sleep(2000);
         tileSidebar_page.clickColorTab();
         Assert.assertTrue(Driver.getDriver().getPageSource().contains("Color"));
+        Thread.sleep(2000);
+    }
+
+    @Test
+    void approximateSize() throws InterruptedException {
+        tileSidebar_page.clickTileButton();
+        //  tileSidebar_page.acceptAllCookiesButton.click();
+        Thread.sleep(2000);
+        tileSidebar_page.clickApproximateSize();
+        Assert.assertTrue(Driver.getDriver().getPageSource().contains("Approximate Size"));
+
+    }
+    @Test
+    public void sortByTrending(){
+        tileSidebar_page.clickTileButton();
+        tileSidebar_page.clickColorTab();
+        tileSidebar_page.clickWhiteColor();
+        tileSidebar_page.clickSortBy();
+        tileSidebar_page.clickTrending();
+
+        Assert.assertTrue(Driver.getDriver().getPageSource().contains("Trending"));
+
     }
 }
