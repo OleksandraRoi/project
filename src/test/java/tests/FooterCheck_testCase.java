@@ -36,6 +36,7 @@ public class FooterCheck_testCase extends TestBase{
     @Test(groups = {"regression"})
     public void test4(){
         SeleniumUtils.switchToWindow("Careers Home Page");
+        new FooterPage().clickOnLinks(new FooterPage().getFourthLink());
         Assert.assertEquals(Driver.getDriver().getTitle(),"Careers Home Page");
         Driver.getDriver().findElement(By.id("consent_agree")).click();
     }
