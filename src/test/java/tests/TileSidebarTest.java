@@ -54,4 +54,18 @@ public class TileSidebarTest extends TestBase {
         Assert.assertTrue(Driver.getDriver().getPageSource().contains("Trending"));
 
     }
+@Test
+    public void addSample() throws InterruptedException {
+    tileSidebar_page.clickTileButton();
+    tileSidebar_page.clickColorTab();
+    tileSidebar_page.clickWhiteColor();
+    tileSidebar_page.clickSortBy();
+    tileSidebar_page.clickTrending();
+    Thread.sleep(2000);
+    tileSidebar_page.clickAddSampleButton();
+    Thread.sleep(2000);
+    tileSidebar_page.clickVewCart();
+    Assert.assertTrue(Driver.getDriver().getPageSource().contains(" Shopping Cart (1)"));
+}
+
 }

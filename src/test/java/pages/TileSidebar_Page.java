@@ -45,6 +45,13 @@ public class TileSidebar_Page {
 
 
 
+  @FindBy(xpath = "/html/body/div[1]/div[9]/div[1]/div[1]/main/div/section[3]/div/main/div[4]/article/div/div/div[7]/form/button")
+       private WebElement submitSampleButton;
+
+  @FindBy(xpath = "a[title='View Cart']")
+  private WebElement vewCart;
+
+
     public void clickTileButton() {
         tilebotton.click();
     }
@@ -66,6 +73,15 @@ public class TileSidebar_Page {
         }
             public void clickTrending(){
                 trending.click();
+            }
+
+            public void clickAddSampleButton() {
+                submitSampleButton.submit();
+
+            }
+            public void clickVewCart(){
+             vewCart.click();
+
             }
         }
 
