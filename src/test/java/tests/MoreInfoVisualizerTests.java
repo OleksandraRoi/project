@@ -18,5 +18,13 @@ public class MoreInfoVisualizerTests extends TestBase{
         moreInfoVisualizer.scrollDown(moreInfoVisualizer.getVisualizerElement());
         moreInfoVisualizer.visualizerElementClick();
         moreInfoVisualizer.getStartedButtonClcik();
+        SeleniumUtils.waitFor(8);
+        //moreInfoVisualizer.iframeSwitch();
+        SeleniumUtils.switchToWindow("GET STARTED NOW");
+       // SeleniumUtils.switchToWindow("Visualizer | Floor & Decor");
+        //SeleniumUtils.waitForVisibility(moreInfoVisualizer.getUploadButton(),5);
+        //moreInfoVisualizer.uploadButtonClick();
+        SeleniumUtils.scroll(1000, 1000);
+        //moreInfoVisualizer.bathroomPicClick();
     }
 }

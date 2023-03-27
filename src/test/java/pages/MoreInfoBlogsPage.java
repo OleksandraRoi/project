@@ -1,10 +1,15 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.Driver;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class MoreInfoBlogsPage {
 
@@ -21,7 +26,7 @@ public class MoreInfoBlogsPage {
     @FindBy(xpath = "//div[@class='grid-link']//h4[@data-analytics-more-info='Blogs']")
     private WebElement blogsElement;
     @FindBy(xpath = "//a[@href='/blogs/marble-bathroom-ideas.html']")
-    private WebElement marbleBathroom;
+    private WebElement readArticle;
     @FindBy(id = "view-article-button")
     private WebElement viewAsArticle;
     @FindBy(linkText = "Black marble")
@@ -30,15 +35,25 @@ public class MoreInfoBlogsPage {
     private WebElement checkBoxBlack;
     @FindBy(xpath = "(//label[@class='f-input_checkbox-label b-plp_variations-label'])[24]")
     private WebElement checkBoxBlackIsSelected;
+    @FindBy(xpath = "//a[@href='/blogs/shower-tile-trends.html']")
+    private WebElement readArticle2;
+    @FindBy(xpath = "(//a[@href='https://www.flooranddecor.com/large-format-tile-tile'])[1]")
+    private WebElement largeFormatTile;
+    @FindBy(xpath = "//div[@class='ss-single-selected']")
+    private WebElement dropDown;
+    @FindBy(xpath = "//div[@data-id='Price Low to High2']")
+    private WebElement priceLowToHigh;
 
 
     public WebElement getPopUpWindow() {return popUpWindow;}
     public WebElement getDecorativesSection() {return decorativesSection;}
     public WebElement getBlogsElement() { return blogsElement; }
-    public WebElement getMarbleBathroom() { return marbleBathroom; }
+    public WebElement getReadArticle() { return readArticle; }
     public WebElement getBlackMarbleLink() { return blackMarbleLink; }
     public WebElement getCheckBoxBlack() {return checkBoxBlack; }
     public WebElement getCheckBoxBlackIsSelected() {return checkBoxBlackIsSelected; }
+    public WebElement getReadArticle2() {return readArticle2;}
+    public WebElement getLargeFormatTile() {return largeFormatTile;}
 
 
     public void acceptCookies(){cookies.click(); }
@@ -50,12 +65,37 @@ public class MoreInfoBlogsPage {
     public void clickOnDecoratives(){ decorativesSection.click();}
     public void clickOnSideBar(){ sideBar.click();}
     public void blogsElementClick(){ blogsElement.click();}
-    public void marbleBathroomClick(){ marbleBathroom.click();}
+    public void readArticleClick(){ readArticle.click();}
     public void viewAsArticleClcik(){viewAsArticle.click();}
     public void blackMarbleLinkClick(){ blackMarbleLink.click();}
 //    public void checkBoxBlackIsSelected(){
 //        assert checkBoxBlack.isSelected();
 //
 //    }
+    public void readArticleClick2(){readArticle2.click();}
+    public void largeFormatTileClick(){largeFormatTile.click();}
+    public void dropDownClick(){dropDown.click();}
+    public void priceLowToHighClick(){priceLowToHigh.click();}
 
+    public String price(){
+    List<WebElement> price = Driver.getDriver().findElements(By.xpath("//span[@data-js-product-price]"));
+        List<Integer> priceLowToHigh = new ArrayList<>();
+
+        for(WebElement element : price){
+            priceLowToHigh.add(Integer.parseInt(element.getText().replaceAll("[$.]", "")));
+        }
+        return String.valueOf(priceLowToHigh);
+    }
+    public String priceCopy() {
+        List<WebElement> price = Driver.getDriver().findElements(By.xpath("//span[@data-js-product-price]"));
+        List<Integer> priceLowToHigh = new ArrayList<>();
+
+        for(WebElement element : price){
+            priceLowToHigh.add(Integer.parseInt(element.getText().replaceAll("[$.]", "")));
+        }
+        List<Integer> copyPrice = new ArrayList<>(priceLowToHigh);
+        Collections.sort(copyPrice);
+
+        return String.valueOf(copyPrice);
+    }
 }
