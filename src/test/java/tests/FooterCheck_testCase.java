@@ -49,5 +49,6 @@ public class FooterCheck_testCase extends TestBase{
         new FooterPage().clickOnLinks(new FooterPage().getFifthLink());
         SeleniumUtils.switchToWindow("Social Responsibility | Floor & Decor");
         Assert.assertEquals(Driver.getDriver().getTitle(),"Social Responsibility | Floor & Decor");
+
     }
 }
