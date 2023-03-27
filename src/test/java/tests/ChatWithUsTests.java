@@ -23,7 +23,7 @@ public class ChatWithUsTests extends TestBase {
     @Test
     public void returnsCancellationsResponse() {
         waitFor(5);
-        click(homePage.acceptAllCookiesButton, 15);
+//        click(homePage.acceptAllCookiesButton, 15);
         click(homePage.chatWithUsButton, 15);
         switchToIframe(new HomePage().chatFrame);
         click(homePage.chatReturnsCancellationsButton, 15);
@@ -32,7 +32,8 @@ public class ChatWithUsTests extends TestBase {
     @Test
     public void designConsultationResponse() {
         waitFor(5);
-        click(homePage.acceptAllCookiesButton, 15);
+
+//        click(homePage.acceptAllCookiesButton, 15);
         click(homePage.chatWithUsButton, 15);
         switchToIframe(homePage.chatFrame);
         click(homePage.chatDesignConsultationButton, 15);
