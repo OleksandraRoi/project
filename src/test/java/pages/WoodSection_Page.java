@@ -14,7 +14,7 @@ public class WoodSection_Page {
     @FindBy(xpath = "//*[@id=\"main-nav-wood\"]")
     private WebElement woodSection;
 
-    @FindBy(xpath = "/html/body/div[1]/div[9]/div[1]/div[1]/main/div/section/div[4]/div[1]/div[2]/div[1]")
+    @FindBy(xpath = "/html/body/div[1]/div[9]/div[1]/div[1]/main/div/section/div[4]/div[1]/div[2]/div[1]/a/div")
     private WebElement woodColor;
 
     @FindBy(xpath = "/html/body/div[1]/div[9]/div[1]/div[1]/main/div/section[3]/div/main/div[1]/article/div/div/div[7]")
@@ -31,7 +31,6 @@ public class WoodSection_Page {
 
     @FindBy(xpath = "/html/body/div[1]/div[9]/div[1]/div[1]/main/div/section[2]/div[1]/div[3]/div/div[2]/div[2]/div/div[5]")
     private WebElement sortByPriceHighToLow;
-
 
 
 
