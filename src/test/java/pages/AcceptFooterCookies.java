@@ -11,7 +11,12 @@ public class AcceptFooterCookies {
     @FindBy(id = "onetrust-accept-btn-handler")
     protected WebElement cookies;
 
+    @FindBy(xpath = "//button[@class='tingle-modal__close']")
+    private WebElement popUpWindow;
+    public WebElement getPopUpWindow() {return popUpWindow;}
+
     public void clickOnCookies() {
         cookies.click();
     }
+    public void popUpWindowClick(){popUpWindow.click();}
 }
