@@ -25,14 +25,20 @@ public class MoreInfoVisualizerPage {
     private WebElement visualizerElement;
     @FindBy(linkText = "GET STARTED NOW")
     private WebElement getStartedButton;
+    @FindBy(xpath = "(//p[@class='MuiTypography-root MuiTypography-body1 css-7znbyz'])[2]")
+    private WebElement text;
+    @FindBy(id = "ffPopup")
+    private WebElement iframe;
     @FindBy(xpath = "//button[@class='MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-14gedw2']")
     private WebElement uploadButton;
-    @FindBy(xpath = "(//div[@class='MuiBox-root css-nqfwo5'])[4]")
+    @FindBy(xpath = "(//div[@class='MuiMasonry-root css-14uf9rv']//div[@style='order: 1;'])[1]")
     private WebElement bathroomPic;
 
     public WebElement getPopUpWindow() {return popUpWindow;}
     public WebElement getDecorativesSection() {return decorativesSection;}
     public WebElement getVisualizerElement() {return visualizerElement; }
+    public WebElement getIframe() {return iframe;}
+    public WebElement getText() {return text;}
     public WebElement getUploadButton() {return uploadButton;}
     public WebElement getBathroomPic() { return bathroomPic; }
 
