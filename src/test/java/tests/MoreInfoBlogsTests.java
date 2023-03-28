@@ -41,9 +41,8 @@ public class MoreInfoBlogsTests extends TestBase{
         String pageSource = Driver.getDriver().getPageSource();
         logger.info("Check if page contains 'Marble'");
         Assert.assertTrue(pageSource.contains("Marble"));
-        logger.info("Check is 'Black' check box is selected");
-        //assert moreInfoBlogs.getCheckBoxBlackIsSelected().isSelected();
-        //moreInfoBlogs.checkBoxBlackIsSelected();
+        logger.info("Check if 'Black' check box is selected");
+        Assert.assertTrue(moreInfoBlogs.getCheckBoxBlack().isSelected());
     }
 
     @Test(groups = {"regression"})

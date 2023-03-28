@@ -31,10 +31,8 @@ public class MoreInfoBlogsPage {
     private WebElement viewAsArticle;
     @FindBy(linkText = "Black marble")
     private WebElement blackMarbleLink;
-    @FindBy(xpath = "//label[@title='Currently Refined by Color: Black']")
+    @FindBy(id = "refinement-boolean-popular-Black-Color")
     private WebElement checkBoxBlack;
-    @FindBy(xpath = "(//label[@class='f-input_checkbox-label b-plp_variations-label'])[24]")
-    private WebElement checkBoxBlackIsSelected;
     @FindBy(xpath = "//a[@href='/blogs/shower-tile-trends.html']")
     private WebElement readArticle2;
     @FindBy(xpath = "(//a[@href='https://www.flooranddecor.com/large-format-tile-tile'])[1]")
@@ -51,7 +49,6 @@ public class MoreInfoBlogsPage {
     public WebElement getReadArticle() { return readArticle; }
     public WebElement getBlackMarbleLink() { return blackMarbleLink; }
     public WebElement getCheckBoxBlack() {return checkBoxBlack; }
-    public WebElement getCheckBoxBlackIsSelected() {return checkBoxBlackIsSelected; }
     public WebElement getReadArticle2() {return readArticle2;}
     public WebElement getLargeFormatTile() {return largeFormatTile;}
 
@@ -68,10 +65,7 @@ public class MoreInfoBlogsPage {
     public void readArticleClick(){ readArticle.click();}
     public void viewAsArticleClcik(){viewAsArticle.click();}
     public void blackMarbleLinkClick(){ blackMarbleLink.click();}
-//    public void checkBoxBlackIsSelected(){
-//        assert checkBoxBlack.isSelected();
-//
-//    }
+
     public void readArticleClick2(){readArticle2.click();}
     public void largeFormatTileClick(){largeFormatTile.click();}
     public void dropDownClick(){dropDown.click();}
