@@ -39,8 +39,6 @@ public class MoreInfoVisualizerPage {
     public WebElement getVisualizerElement() {return visualizerElement; }
     public WebElement getIframe() {return iframe;}
     public WebElement getText() {return text;}
-    public WebElement getUploadButton() {return uploadButton;}
-    public WebElement getBathroomPic() { return bathroomPic; }
 
     public void acceptCookies(){cookies.click(); }
     public void popUpWindowClick(){popUpWindow.click();}
@@ -51,12 +49,5 @@ public class MoreInfoVisualizerPage {
     public void clickOnDecoratives(){decorativesSection.click();}
     public void clickOnSideBar(){sideBar.click();}
     public void visualizerElementClick(){visualizerElement.click();}
-    public void getStartedButtonClcik(){getStartedButton.click();}
-    public void uploadButtonClick(){uploadButton.click();}
-    public void bathroomPicClick(){bathroomPic.click();}
-    public void iframeSwitch() {
-        WebElement iframeElement = Driver.getDriver().findElement(By.cssSelector("iframe[title='Google Tagging iFrame']"));
-        Driver.getDriver().switchTo().frame(iframeElement);
-    }
-
+    public void getStartedButtonClick(){getStartedButton.click();}
 }

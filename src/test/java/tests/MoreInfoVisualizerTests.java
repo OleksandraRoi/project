@@ -25,7 +25,7 @@ public class MoreInfoVisualizerTests extends TestBase{
         logger.info("Navigate to Visualizer");
         moreInfoVisualizer.visualizerElementClick();
         logger.info("Get Started button click");
-        moreInfoVisualizer.getStartedButtonClcik();
+        moreInfoVisualizer.getStartedButtonClick();
         SeleniumUtils.waitFor(8);
         logger.info("Switch to Iframe");
         SeleniumUtils.switchToIframe(moreInfoVisualizer.getIframe());
@@ -33,18 +33,5 @@ public class MoreInfoVisualizerTests extends TestBase{
         String text = moreInfoVisualizer.getText().getText();
         logger.info("Check if it contains the text");
         Assert.assertTrue(pageSource.contains(text));
-
-
-
-//        SeleniumUtils.scroll(500, 500);
-//        SeleniumUtils.waitForClickablility(moreInfoVisualizer.getBathroomPic(), 5);
-//        moreInfoVisualizer.bathroomPicClick();
-
-        //SeleniumUtils.switchToWindow("Visualizer | Floor & Decor");
-        //moreInfoVisualizer.iframeSwitch();
-        //SeleniumUtils.switchToWindow("GET STARTED NOW");
-        //SeleniumUtils.waitForVisibility(moreInfoVisualizer.getUploadButton(),5);
-        //moreInfoVisualizer.uploadButtonClick();
-
     }
 }
